@@ -1,0 +1,2078 @@
+@charset "UTF-8";
+@font-face {
+    font - family: Yakumono;
+    src: url(/misatoto/assets / YakuCaltGothic - R.woff) format("woff"), url(/misatoto/assets / YakuCaltGothic - R.otf) format("opentype");
+    font - weight: 300
+}
+
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+body {
+    margin: 0;
+    color: #2d2927;
+    background - color: #32645a
+}
+
+details,
+main {
+    display: block
+}
+
+h1 {
+    font - size: 2em;
+    margin: .67em 0
+}
+
+hr {
+    box - sizing: content - box;
+    height: 0;
+    overflow: visible
+}
+
+code,
+kbd,
+pre,
+samp {
+    font - family: monospace, monospace;
+    font - size: 1em
+}
+
+a {
+    background - color: transparent;
+    color: inherit;
+    text - decoration: none
+}
+
+abbr[title] {
+    border - bottom: none;
+    text - decoration: underline;
+    -webkit - text - decoration: underline dotted;
+    text - decoration: underline dotted
+}
+
+b,
+strong {
+    font - weight: bolder
+}
+
+small {
+    font - size: 80 %
+}
+
+sub,
+sup {
+    font - size: 75 %;
+    line - height: 0;
+    position: relative;
+    vertical - align: baseline
+}
+
+sub {
+    bottom: -.25em
+}
+
+sup {
+    top: -.5em
+}
+
+img {
+    border - style: none
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font - family: inherit;
+    font - size: 100 %;
+    line - height: 1.15;
+    margin: 0
+}
+
+button,
+input {
+    overflow: visible
+}
+
+button,
+select {
+    text - transform: none
+}
+
+[type=button],
+[type=reset],
+[type=submit],
+button {
+    -webkit - appearance: button
+}
+
+[type=button]:: -moz - focus - inner,
+[type=reset]:: -moz - focus - inner,
+[type=submit]:: -moz - focus - inner,
+button:: -moz - focus - inner {
+    border - style: none;
+    padding: 0
+}
+
+[type=button]: -moz - focusring,
+[type=reset]: -moz - focusring,
+[type=submit]: -moz - focusring,
+button: -moz - focusring {
+    outline: ButtonText dotted 1px
+}
+
+legend {
+    box - sizing: border - box;
+    color: inherit;
+    display: table;
+    max - width: 100 %;
+    padding: 0;
+    white - space: normal
+}
+
+progress {
+    vertical - align: baseline
+}
+
+textarea {
+    overflow: auto
+}
+
+[type=checkbox],
+[type=radio] {
+    box - sizing: border - box;
+    padding: 0
+}
+
+[type=number]:: -webkit - inner - spin - button,
+[type=number]:: -webkit - outer - spin - button {
+    height: auto
+}
+
+[type=search] {
+    -webkit - appearance: textfield;
+    outline - offset: -2px
+}
+
+[type=search]:: -webkit - search - decoration {
+    -webkit - appearance: none
+}
+
+:: -webkit - file - upload - button {
+    -webkit - appearance: button;
+    font: inherit
+}
+
+summary {
+    display: list - item
+}
+
+[hidden],
+template {
+    display: none
+}
+
+*,
+:: after,
+:: before {
+    box - sizing: border - box
+}
+
+html {
+    -webkit - text - size - adjust: 100 %;
+    font - family: Yakumono, TazuganeGothicStdN - Light, sans - serif;
+    line - height: 1.5;
+    word - wrap: break-word;
+    overflow - wrap: break-word;
+    text - align: left
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin - top: 0;
+    margin - bottom: 0;
+    font - weight: inherit
+}
+
+dl,
+hr,
+p,
+pre {
+    margin - top: 0;
+    margin - bottom: 0
+}
+
+blockquote,
+figure {
+    margin: 0
+}
+
+ol,
+ul {
+    margin - top: 0;
+    margin - bottom: 0;
+    padding - left: 0
+}
+
+li {
+    list - style - type: none
+}
+
+dd {
+    margin - left: 0
+}
+
+address,
+cite,
+dfn,
+em,
+i,
+var {
+    font-style: inherit
+}
+
+audio,
+canvas,
+embed,
+iframe,
+img,
+object,
+svg,
+video {
+    vertical - align: bottom
+}
+
+iframe,
+img,
+input,
+select,
+textarea,
+video {
+    max - width: 100 %;
+    height: auto
+}
+
+svg {
+    fill: currentcolor
+}
+
+table {
+    border - spacing: 0;
+    border - collapse: collapse
+}
+
+td,
+th {
+    padding: 0
+}
+
+th {
+    text - align: inherit
+}
+
+button,
+input,
+select,
+textarea {
+    padding: .25em .375em;
+    font: inherit;
+    letter - spacing: inherit;
+    color: inherit;
+    background - color: transparent;
+    border: 1px solid WindowFrame
+}
+
+[data - whatinput=mouse] button,
+[data - whatinput=mouse] select,
+[data - whatinput=touch] button,
+[data - whatinput=touch] select,
+[tabindex="-1"] {
+    outline: 0
+}
+
+select {
+    -moz - appearance: none;
+    -webkit - appearance: none;
+    padding - right: 1em;
+    background: right center / 1em no - repeat;
+    border - radius: 0
+}
+
+select: not([multiple]): not([size]) {
+    background - image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E")
+}
+
+:: -ms - expand {
+    display: none
+}
+
+fieldset {
+    min - width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0
+}
+
+[hidden][hidden] {
+    display: none!important
+}
+
+.Badge {
+    display: inline - block;
+    padding: .3em .3em .15em;
+    font - family: TazuganeGothicStdN - Thin, sans - serif;
+    font - weight: 400;
+    font - size: .875rem;
+    line - height: 1;
+    color: #fff;
+    background - color: #503278
+}
+
+.Badge__highlight {
+    color: #ffc8b8;
+    transition: color .35s cubic - bezier(.37, .16, .12, 1)
+}
+
+.Button {
+    display: flex;
+    align - items: center;
+    padding: .75rem 1.25rem;
+    color: #32645a;
+    border: 1px solid;
+    border - radius: .5rem;
+    transition: background - color .35s cubic - bezier(.37, .16, .12, 1), color .35s cubic - bezier(.37, .16, .12, 1)
+}
+
+.SubPage__body[data - theme=green] .Button,
+.SubPage__body[data - theme=invert] .Button {
+    color: #c89aa5
+}
+
+.Button__label {
+    flex - grow: 1
+}
+
+.Button__icon {
+    flex - shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin - left: .5rem
+}
+
+.Container {
+    max - width: 42.5rem;
+    margin - right: auto;
+    margin - left: auto;
+    padding - right: 1.25rem;
+    padding - left: 1.25rem
+}
+
+@media(min - width: 45em) {
+    .Container {
+        max - width: 45rem;
+        padding - right: 2.5rem;
+        padding - left: 2.5rem
+    }
+}
+
+@media(min - width: 62.5em) {
+    .Container {
+        max - width: 62.5rem
+    }
+}
+
+@media(min - width: 100em) {
+    .Badge {
+        font - size: 1rem
+    }
+    .HomeStoryTeaserList.Badge {
+        font - size: 1.25rem
+    }
+    .Container {
+        max - width: 87.5rem;
+        padding - right: 3.125rem;
+        padding - left: 3.125rem
+    }
+}
+
+.Container.- noLimit {
+    max - width: none
+}
+
+.Divider {
+    height: 1px;
+    background - color: #32645a
+}
+
+.Fill {
+    width: 100 %
+}
+
+.FullscreenMenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z - index: 2;
+    background - color: #32645a;
+    transition: visibility .8s cubic - bezier(.4, 0, .2, 1), opacity .8s cubic - bezier(.37, .16, .12, 1);
+    outline: 0;
+    background - image: url(/misatoto/assets / bg_tree_1.png), url(/misatoto/assets / bg_tree_2.png);
+    background - size: 43px 63px, 91px 82px;
+    background - repeat: no - repeat, no - repeat;
+    background - position: 5 % 255px, 75 % 20px
+}
+
+@media(min - width: 45em) {
+    .FullscreenMenu {
+        background - position: 50 % 180px, 85 % 120px
+    }
+}
+
+@media(min - width: 62.5em) {
+    .Container.- middle {
+        box - sizing: content - box;
+        max - width: 52rem
+    }
+    .Container.- narrow {
+        box - sizing: content - box;
+        max - width: 40rem
+    }
+    .FullscreenMenu {
+        background - position: 60 % 25px, 80 % 110px
+    }
+}
+
+.FullscreenMenu__header {
+    position: relative
+}
+
+.FullscreenMenu__body {
+    overflow: auto;
+    -webkit - overflow - scrolling: touch;
+    width: 100vw;
+    height: 100vh
+}
+
+.FullscreenMenu__logo {
+    position: absolute;
+    width: 60px;
+    height: 49px;
+    left: 0;
+    top: 20px;
+    color: #fff;
+    z - index: 1
+}
+
+@media(min - width: 45em) {
+    .FullscreenMenu__logo {
+        width: 160px;
+        height: 132px;
+        top: 40px
+    }
+}
+
+.FullscreenMenu__closeButton {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    top: 20px;
+    right: 0;
+    border: 0;
+    padding: 0;
+    color: #fff;
+    cursor: pointer;
+    z - index: 2
+}
+
+.FullscreenMenu__closeButton svg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto
+}
+
+.FullscreenMenu__closeButton svg>* {
+    transition: fill .45s cubic- bezier(.52, .08, .18, 1)
+}
+
+@media(any - hover) {
+    .Button: hover {
+        color: #fff;
+        background - color: #32645a
+    }
+    .SubPage__body[data - theme=green] .Button: hover,
+    .SubPage__body[data - theme=invert] .Button: hover {
+        color: #2d2927;
+        background - color: #c89aa5
+    }
+    .FullscreenMenu__closeButton: hover svg>: first - child {
+        fill: #fff;
+        transition: fill .35s cubic - bezier(.37, .16, .12, 1)
+    }
+    .FullscreenMenu__closeButton: hover svg>: last - child {
+        fill: #2d2927;
+        transition: fill .35s cubic - bezier(.37, .16, .12, 1)
+    }
+    .HomeContents__scrollButton: hover svg>: first - child {
+        fill: #fff
+    }
+}
+
+.FullscreenMenu[aria - hidden=true] {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .5s cubic - bezier(.4, 0, .2, 1), opacity .5s cubic - bezier(.37, .16, .12, 1)
+}
+
+.Heading {
+    font - family: TazuganeGothicStdN - Bold, sans - serif
+}
+
+.Heading.- lv1 {
+    font - size: 1.5rem;
+    line - height: 1.33333
+}
+
+@media(min - width: 45em) {
+    .FullscreenMenu__closeButton {
+        top: 40px
+    }
+    .Heading.- lv1 {
+        font - size: 2rem
+    }
+}
+
+.Heading.- lv2 {
+    font - size: 1rem;
+    line - height: 1.75
+}
+
+.StoryBody.Heading.- lv2 {
+    font - size: 1.25rem;
+    line - height: 1.75
+}
+
+.Heading.- lv3 {
+    font - size: .875rem;
+    line - height: 2
+}
+
+.Heading.- light {
+    color: #fff
+}
+
+.Heading.- primary {
+    color: #32645a
+}
+
+.HomeContents {
+    position: relative
+}
+
+.HomeContents.js - parallaxItem - content {
+    display: block;
+    opacity: .2
+}
+
+.HomeContents.js - parallaxItem.is - show.js - parallaxItem - content {
+    opacity: 1;
+    transform: translate3d(0, 0, 0)
+}
+
+.HomeContents__inner {
+    position: relative;
+    width: 100 %
+}
+
+.HomeContents__bottom {
+    position: fixed;
+    width: 100 %;
+    bottom: 0
+}
+
+.HomeContents__bottom.inner {
+    position: relative
+}
+
+.HomeContents__scrollButton {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    right: 0;
+    bottom: 20px;
+    border - radius: 50 %;
+    border: 0;
+    padding: 0;
+    color: #fff;
+    cursor: pointer;
+    transition: visibility .35s cubic - bezier(.37, .16, .12, 1), opacity .35s cubic - bezier(.37, .16, .12, 1)
+}
+
+.HomeContents__scrollButton.is - hide {
+    visibility: hidden;
+    opacity: 0
+}
+
+.HomeContents__scrollButton svg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto
+}
+
+.HomeContents__scrollButton svg>* {
+    transition: fill .35s cubic- bezier(.37, .16, .12, 1)
+}
+
+.HomeStoryFooter {
+    display: flex;
+    justify - content: center;
+    align - items: center;
+    height: 100vh;
+    margin - top: 300vh
+}
+
+.HomeStoryFooter__body {
+    text - align: center
+}
+
+.HomeStoryFooter__description {
+    margin - bottom: 25px;
+    font - family: TazuganeGothicStdN - Bold, sans - serif;
+    font - size: 1.5rem;
+    line - height: 2;
+    font - feature - settings: "palt";
+    letter - spacing: .08em;
+    text - align: center
+}
+
+@media(min - width: 45em) {
+    .HomeContents__scrollButton {
+        bottom: 40px
+    }
+    .HomeStoryFooter__description {
+        margin - bottom: 35px;
+        font - size: 1.75rem
+    }
+    .HomeStoryFooter__description.br - sm {
+        display: none
+    }
+}
+
+@media(min - width: 100em) {
+    .HomeStoryFooter__description {
+        margin - bottom: 40px;
+        font - size: 2.125rem
+    }
+}
+
+.HomeStoryFooter__more {
+    width: 230px;
+    display: block;
+    padding: .7em 1.4em .5em;
+    margin - left: auto;
+    margin - right: auto;
+    border - radius: 99em;
+    font - family: TazuganeGothicStdN - Bold, sans - serif;
+    font - weight: 700;
+    font - size: 1.25rem;
+    color: #fff;
+    text - align: right;
+    background - color: #c48426;
+    transition: background - color .35s cubic - bezier(.37, .16, .12, 1), color .35s cubic - bezier(.37, .16, .12, 1)
+}
+
+.HomeStoryFooter__btnStories {
+    background - image: url(/misatoto/assets / home / btn_kagura.png);
+    background - size: 88.74px 55.1px;
+    background - repeat: no - repeat;
+    background - position: 0 100 %
+}
+
+@media(min - width: 100em) {
+    .HomeStoryFooter__more {
+        width: 280px;
+        padding: .7em 1.6em .5em;
+        font - size: 1.5rem
+    }
+    .HomeStoryFooter__btnStories {
+        background - size: 107.1px 66.5px
+    }
+}
+
+.HomeStoryFooter__btnMisato {
+    background - image: url(/misatoto/assets / home / btn_misabo.png);
+    background - size: 37.99px 40.6px;
+    background - repeat: no - repeat;
+    background - position: 13px 100 %
+}
+
+.HomeStoryFooter__more+.HomeStoryFooter__more {
+    margin - top: 16px
+}
+
+.HomeStoryHeader {
+    height: 400vh
+}
+
+.HomeStoryHeader__inner {
+    display: flex;
+    justify - content: center;
+    align - items: center;
+    height: 100vh
+}
+
+.HomeStoryHeader__logo {
+    position: relative;
+    width: 160px;
+    height: 192px;
+    left: 10px;
+    top: -10px;
+    color: #2d2927;
+    opacity: 0;
+    transition: opacity 1s cubic - bezier(.25, .25, .75, .75) .1s
+}
+
+.HomeStoryHeader__logo.is - show {
+    opacity: 1
+}
+
+@media(min - width: 45em) {
+    .HomeStoryHeader__logo {
+        width: 240px;
+        height: 288px;
+        top: 0
+    }
+}
+
+.HomeStoryHeader__logo svg {
+    display: block;
+    width: 100 %;
+    height: 100 %
+}
+
+.HomeStoryHeader__description {
+    font - family: TazuganeGothicStdN - Bold, sans - serif;
+    font - size: 1.375rem;
+    line - height: 2;
+    text - align: center
+}
+
+.HomeStoryHeader__description: last - child {
+    margin - left: 1em
+}
+
+.HomeStoryHeader__description.text {
+    font - feature - settings: "palt";
+    letter - spacing: .08em
+}
+
+.HomeStoryHeader__description.dash {
+    padding - left: .1em
+}
+
+@media(min - width: 45em) {
+    .HomeStoryHeader__description: last - child {
+        margin - left: 2em
+    }
+    .HomeStoryHeader__description {
+        font - size: 1.75rem
+    }
+}
+
+.HomeStoryHeader__description: first - child {
+    margin - bottom: 1.5em
+}
+
+.HomeStoryTeaser {
+    display: block;
+    position: absolute;
+    bottom: 100px
+}
+
+@media(min - width: 45em) {
+    .HomeStoryTeaser {
+        bottom: 40px
+    }
+}
+
+@media(any - hover) {
+    .HomeContents__scrollButton: hover svg>: last - child,
+    .HomeContents__scrollButton: hover svg>: nth - child(2) {
+        fill: #2d2927
+    }
+    .HomeStoryFooter__more: hover,
+    .HomeStoryTeaser: hover.HomeStoryTeaser__more.inner {
+        background - color: #fff;
+        color: #2d2927
+    }
+    .MenuList__itemLink a: hover {
+        color: #ffc8b8
+    }
+    .MenuList__itemLink a: hover.icon {
+        color: #2d2927;
+        background - color: #fff
+    }
+    .MenuList__itemLink a: hover.icon.icon - external {
+        color: #ffc8b8;
+        background - color: transparent
+    }
+}
+
+.HomeStoryTeaser__badge {
+    margin - bottom: 12px
+}
+
+@media(min - width: 45em) {
+    .HomeStoryTeaser__badge {
+        margin - bottom: 13px
+    }
+}
+
+@media(min - width: 62.5em) {
+    .HomeStoryHeader__logo {
+        width: 320px;
+        height: 384px
+    }
+    .HomeStoryTeaser {
+        bottom: 55px
+    }
+    .HomeStoryTeaser__badge {
+        margin - bottom: 15px
+    }
+}
+
+@media(min - width: 100em) {
+    .HomeStoryFooter__btnMisato {
+        background - size: 45.85px 49px;
+        background - position: 16px 100 %
+    }
+    .HomeStoryFooter__more+.HomeStoryFooter__more {
+        margin - top: 20px
+    }
+    .HomeStoryHeader__description {
+        font - size: 2.125rem
+    }
+    .HomeStoryTeaser {
+        bottom: 70px
+    }
+    .HomeStoryTeaser__badge {
+        margin - bottom: 18px
+    }
+}
+
+.HomeStoryTeaser__headline {
+    font - family: TazuganeGothicStdN - Bold, sans - serif;
+    line - height: 1.3;
+    font - size: 1.5rem
+}
+
+@media(min - width: 45em) {
+    .HomeStoryTeaser__headline {
+        font - size: 1.875rem
+    }
+}
+
+.HomeStoryTeaser__headline.inner {
+    color: #2d2927;
+    font - feature - settings: "palt";
+    letter - spacing: .08em
+}
+
+.HomeStoryTeaser__headline.inner div {
+    display: inline
+}
+
+.HomeStoryTeaser__headline.inner span {
+    background - image: linear - gradient(to bottom, #fff 90 %, rgba(255, 255, 255, 0) 90 %);
+    background - repeat: repeat - x
+}
+
+.HomeStoryTeaser__more {
+    margin - top: 25px
+}
+
+@media(min - width: 45em) {
+    .HomeStoryTeaser__headline.inner div {
+        display: block
+    }
+    .HomeStoryTeaser__headline.inner span {
+        padding: 0 .2em
+    }
+    .HomeStoryTeaser__more {
+        margin - top: 30px
+    }
+}
+
+@media(min - width: 62.5em) {
+    .HomeStoryTeaser__headline {
+        font - size: 2.25rem
+    }
+    .HomeStoryTeaser__more {
+        margin - top: 35px
+    }
+}
+
+.HomeStoryTeaser__more.inner {
+    display: inline - block;
+    padding: .7em 1.6em .5em;
+    border - radius: 99em;
+    font - family: TazuganeGothicStdN - Bold, sans - serif;
+    font - weight: 700;
+    font - size: 1.25rem;
+    color: #fff;
+    background - color: #2d2927;
+    transition: background - color .35s cubic - bezier(.37, .16, .12, 1), color .35s cubic - bezier(.37, .16, .12, 1)
+}
+
+@media(min - width: 100em) {
+    .HomeStoryTeaser__headline {
+        font - size: 2.875rem
+    }
+    .HomeStoryTeaser__more {
+        margin - top: 40px
+    }
+    .HomeStoryTeaser__more.inner {
+        font - size: 1.5rem
+    }
+}
+
+.HomeStoryTeaserList__item {
+    position: relative
+}
+
+.HomeStoryTeaserList__item: after,
+.HomeStoryTeaserList__item: before {
+    content: " ";
+    display: table
+}
+
+.HomeStoryTeaserList__item: after {
+    clear: both
+}
+
+.HomeStoryTeaserList__itemInner {
+    position: relative;
+    height: 100vh;
+    margin - top: 300vh
+}
+
+.Map {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background - color: #efdbcb
+}
+
+.Map.is - evening {
+    background - color: #fff4d7
+}
+
+.Map canvas {
+    width: 100 %;
+    height: 100 %;
+    opacity: 0;
+    transition: opacity .8s cubic - bezier(.25, .25, .75, .75) .2s
+}
+
+.Map canvas.is - loaded {
+    opacity: 1
+}
+
+.MenuList {
+    display: block;
+    margin - top: 120px;
+    margin - bottom: 40px
+}
+
+@media(min - width: 45em) {
+    .MenuList {
+        margin - top: 46px;
+        margin - bottom: 40px
+    }
+}
+
+.MenuList__itemLink {
+    color: #fff;
+    margin - bottom: 1.25rem
+}
+
+.MenuList__itemLink.text - sm {
+    margin - top: 2rem
+}
+
+.MenuList__itemLink.text - sm a {
+    font - size: 1rem
+}
+
+@media(min - width: 45em) {
+    .MenuList__itemLink.text - sm a {
+        font - size: .875rem
+    }
+}
+
+.MenuList__itemLink a {
+    display: block;
+    position: relative;
+    padding - right: 34px;
+    font - family: TazuganeGothicStdN - Bold, sans - serif;
+    font - size: 1.125rem;
+    line - height: 1.15;
+    font - feature - settings: "palt";
+    letter - spacing: .08em;
+    transition: color .35s cubic - bezier(.37, .16, .12, 1)
+}
+
+@media(min - width: 45em) {
+    .MenuList__itemLink a {
+        width: 35 %;
+        padding - right: 26px;
+        margin - left: 33.33333 %;
+        font - size: 1rem
+    }
+}
+
+.MenuList__itemLink.icon {
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 0;
+    top: 50 %;
+    background - color: #2d2927;
+    border - radius: 50 %;
+    color: #fff;
+    transform: translate3d(0, -50 %, 0);
+    transition: background - color .35s cubic - bezier(.37, .16, .12, 1), color .35s cubic - bezier(.37, .16, .12, 1)
+}
+
+.MenuList__itemLink.icon svg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 6px;
+    height: 10px
+}
+
+.MenuList__itemLink.icon.icon - external {
+    background - color: transparent;
+    border - radius: 0
+}
+
+.MenuList__itemLink.icon.icon - external svg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    width: 20px;
+    height: 20px
+}
+
+.FullscreenMenu[aria - hidden=true] .MenuStory {
+    transform: translateY(30px);
+    transition: transform .5s cubic - bezier(.645, .045, .355, 1)
+}
+
+.FullscreenMenu[aria - hidden=true] .MenuStory__title {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: transform .3s cubic - bezier(.55, .055, .675, .19), opacity .3s cubic - bezier(.55, .055, .675, .19)
+}
+
+.MenuStory {
+    width: 100 %;
+    margin - top: -10px;
+    transition: transform .8s cubic - bezier(.37, .16, .12, 1)
+}
+
+@media(min - width: 45em) {
+    .MenuList__itemLink.icon {
+        width: 16px;
+        height: 16px
+    }
+    .MenuList__itemLink.icon svg {
+        width: 4.8px;
+        height: 8px
+    }
+    .MenuList__itemLink.icon.icon - external svg {
+        width: 16px;
+        height: 16px
+    }
+    .MenuStory {
+        margin - top: 35px
+    }
+}
+
+.MenuStory:: after,
+.MenuStory:: before {
+    display: block;
+    content: "";
+    width: 100 %;
+    background - repeat: repeat - x
+}
+
+.MenuStory:: before {
+    position: relative;
+    height: 200px;
+    background - image: url(/misatoto/assets / cloud_loop_top.png);
+    background - size: 1440px 200px;
+    z - index: 1
+}
+
+.MenuStory:: after {
+    height: 150px;
+    background - image: url(/misatoto/assets / cloud_loop_bottom.png);
+    background - size: 1440px 150px
+}
+
+.MenuStory__inner {
+    padding - top: 50px;
+    padding - bottom: 50px;
+    margin - top: -50px;
+    margin - bottom: -50px;
+    background - color: #efdbcb;
+    background - image: url(/misatoto/assets / cloud_loop.png);
+    background - size: 1440px 480px
+}
+
+.MenuStory__title {
+    display: block;
+    margin - bottom: 40px;
+    font - family: TazuganeGothicStdN - Bold, sans - serif;
+    font - size: 1.25rem;
+    transition: transform .8s cubic - bezier(.215, .61, .355, 1) .2s, opacity .8s cubic - bezier(.215, .61, .355, 1) .2s
+}
+
+.MenuStoryList {
+    display: flex;
+    flex - wrap: wrap
+}
+
+.MenuStoryList__item {
+    box - sizing: border - box;
+    width: 100 %;
+    margin - bottom: 30px
+}
+
+@media(min - width: 62.5em) {
+    .MenuList__itemLink a {
+        width: 25 %;
+        margin - left: 25 %
+    }
+    .MenuStoryList__item {
+        width: 52.5 %;
+        padding - right: 5 %;
+        margin - bottom: 60px
+    }
+    .MenuStoryList__item: nth - child(2n) {
+        width: 47.5 %;
+        padding - right: 0
+    }
+}
+
+@media(min - width: 100em) {
+    .MenuList__itemLink.text - sm a {
+        font - size: 1rem
+    }
+    .MenuList__itemLink a {
+        width: 20.83333 %;
+        font - size: 1.125rem;
+        margin - left: 20.83333 %
+    }
+    .MenuStory__title {
+        font - size: 1.5rem
+    }
+    .MenuStoryList__item {
+        width: 35 %;
+        padding - right: 5 %;
+        margin - bottom: 60px
+    }
+    .MenuStoryList__item: nth - child(2n) {
+        width: 35 %;
+        padding - right: 5 %
+    }
+    .MenuStoryList__item: nth - child(3n) {
+        width: 30 %;
+        padding - right: 0
+    }
+}
+
+.MisatoAccessList>div {
+    display: flex
+}
+
+.MisatoAccessList.- wrap>div {
+    flex - wrap: wrap
+}
+
+.MisatoAccessList>div>dt {
+    flex - shrink: 0;
+    min - width: 7em
+}
+
+.MisatoAccessList.- wrap>div>dt {
+    width: auto
+}
+
+.MisatoAccessList>div>dt:: before {
+    content: "・";
+    display: inline - block;
+    width: 1em;
+    text - align: right
+}
+
+.MisatoAccessList>div>dd {
+    margin - left: 1rem
+}
+
+.MisatoBioList>div {
+    display: flex
+}
+
+.MisatoBioList>div>dt {
+    flex - shrink: 0;
+    min - width: 7em
+}
+
+.MisatoBioList>div>dd {
+    margin - left: 2em
+}
+
+.MisatoToc__photos {
+    display: block;
+    position: relative
+}
+
+.MisatoToc__photosIconWrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify - content: center;
+    align - items: center;
+    width: 2.5rem;
+    margin: .9375rem;
+    color: #fff;
+    background - color: #32645a;
+    border - radius: 50 %;
+    transition: color .35s cubic - bezier(.37, .16, .12, 1), background - color .35s cubic - bezier(.37, .16, .12, 1)
+}
+
+@media(min - width: 45em) {
+    .MisatoToc__photosIconWrapper {
+        width: 3.125rem;
+        margin: 2.5rem
+    }
+}
+
+.MisatoToc__photosIconWrapper:: before {
+    content: "";
+    display: block;
+    padding - top: 100 %
+}
+
+.MisatoToc__photosIcon {
+    width: .5625rem;
+    height: .9375rem
+}
+
+@media(min - width: 45em) {
+    .MisatoToc__photosIcon {
+        width: .75rem;
+        height: 1.25rem
+    }
+}
+
+.MisatoToc__inPageLink {
+    display: flex;
+    align - items: center;
+    padding - top: .25rem;
+    padding - bottom: .25rem;
+    font - family: TazuganeGothicStdN - Bold, sans - serif;
+    color: #32645a;
+    transition: color .35s cubic - bezier(.37, .16, .12, 1)
+}
+
+.MisatoToc__inPageLinkLabel {
+    flex - grow: 1
+}
+
+.MisatoToc__inPageLinkIconWrapper {
+    flex - shrink: 0;
+    display: flex;
+    justify - content: center;
+    align - items: center;
+    width: 1rem;
+    height: 1rem;
+    margin - left: 1rem;
+    color: #fff;
+    background - color: #32645a;
+    border - radius: 50 %;
+    transition: background - color .35s cubic - bezier(.37, .16, .12, 1), color .35s cubic - bezier(.37, .16, .12, 1)
+}
+
+.MisatoToc__inPageLinkIcon {
+    width: .5rem;
+    height: .25rem;
+    stroke: currentColor
+}
+
+.MisatoTownBox {
+    padding: .5rem .75rem;
+    background - color: rgba(255, 255, 255, .25);
+    border: 1px solid #32645a;
+    border - radius: .25rem
+}
+
+.MisatoTownBox__list>div {
+    display: flex
+}
+
+.MisatoTownBox__list>div>dt {
+    flex - shrink: 0;
+    min - width: 7em;
+    font - family: TazuganeGothicStdN - Bold, sans - serif
+}
+
+.MisatoTownBox__list>div>dt:: before {
+    content: "・";
+    display: inline - block;
+    width: 1em;
+    font - family: Yakumono, TazuganeGothicStdN - Light, sans - serif;
+    text - align: right
+}
+
+.MisatoTownBox__list>div>dd {
+    margin - left: 1em
+}
+
+.SiteHeader {
+    position: fixed;
+    width: 100 %;
+    top: 0;
+    z - index: 1
+}
+
+.SiteHeader__inner {
+    position: relative
+}
+
+.SiteHeader__logo {
+    position: absolute;
+    width: 60px;
+    height: 49px;
+    left: 0;
+    top: 20px;
+    color: #fff;
+    transition: opacity .5s cubic - bezier(.37, .16, .12, 1)
+}
+
+@media(min - width: 45em) {
+    .SiteHeader__logo {
+        width: 160px;
+        height: 132px;
+        top: 40px
+    }
+}
+
+.SiteHeader__logo.is - hide {
+    opacity: 0
+}
+
+.SiteHeader__menuButton {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    top: 20px;
+    right: 0;
+    border: 0;
+    padding: 0;
+    cursor: pointer
+}
+
+@media(min - width: 45em) {
+    .SiteHeader__menuButton {
+        top: 40px
+    }
+}
+
+.SiteHeader__menuButton svg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto
+}
+
+.SiteHeader__menuButton svg path {
+    transition: fill .45s cubic - bezier(.52, .08, .18, 1)
+}
+
+.SiteHeader__linkMisato {
+    position: absolute;
+    top: 86px;
+    right: 0;
+    width: 56px;
+    height: 56px
+}
+
+@media(min - width: 45em) {
+    .SiteHeader__linkMisato {
+        top: 106px
+    }
+}
+
+.SiteHeader__linkMisatoIcon {
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    background - image: url(/misatoto/assets / icon_misabo.png);
+    background - repeat: no - repeat;
+    background - position: center - 160px;
+    background - size: 40px 360px
+}
+
+.SiteHeader__linkMisatoBg {
+    position: absolute;
+    top: 50 %;
+    right: 0;
+    bottom: 0;
+    left: 50 %;
+    z - index: -1;
+    transform: translate(-50 %, -50 %);
+    width: 40px;
+    height: 40px;
+    transition: fill .45s cubic - bezier(.52, .08, .18, 1)
+}
+
+@-webkit - keyframes SiteHeader - misabo {
+    from {
+        background - position: center top
+    }
+    to {
+        background - position: center - 360px
+    }
+}
+
+@keyframes SiteHeader - misabo {
+    from {
+        background - position: center top
+    }
+    to {
+        background - position: center - 360px
+    }
+}
+
+.Stack>*+* {
+    margin- top: 1.5rem
+}
+
+.Stack.- xxs>*+* {
+    margin- top: .5rem
+}
+
+.Stack.- xs>*+* {
+    margin- top: .75rem
+}
+
+.Stack.- sm>*+* {
+    margin- top: 1rem
+}
+
+.Stack.- lg>*+* {
+    margin- top: 2rem
+}
+
+.Stack.- xl>*+* {
+    margin- top: 3rem
+}
+
+.Stack.- xxl>*+* {
+    margin- top: 5rem
+}
+
+.StoryBody figure,
+.StoryBody h2,
+: root.StoryBody figure+* {
+    margin- top: 3rem
+}
+
+.StoryBody p {
+    margin - top: 1.5rem;
+    font - size: 1rem;
+    line - height: 1.75
+}
+
+.StoryBody figure>*+*,
+: root.StoryBody figure+figure {
+    margin - top: 1rem
+}
+
+@media(min - width: 45em) {
+    .Stack.- sm\: lg>*+*,
+    : root.StoryBody figure+figure {
+        margin - top: 2rem
+    }
+}
+
+.StoryBody>: first - child {
+    margin - top: 0
+}
+
+.StoryBody figure,
+.StoryBody h2,
+.StoryBody p {
+    max - width: 42.5rem;
+    margin - right: auto;
+    margin - left: auto;
+    padding - right: 1.25rem;
+    padding - left: 1.25rem
+}
+
+@media(min - width: 45em) {
+    .StoryBody figure,
+    .StoryBody h2,
+    .StoryBody p {
+        max - width: 45rem;
+        padding - right: 2.5rem;
+        padding - left: 2.5rem
+    }
+}
+
+@media(min - width: 62.5em) {
+    .StoryBody figure,
+    .StoryBody h2,
+    .StoryBody p {
+        max - width: 62.5rem
+    }
+}
+
+@media(min - width: 100em) {
+    .StoryBody figure,
+    .StoryBody h2,
+    .StoryBody p {
+        max - width: 87.5rem;
+        padding - right: 3.125rem;
+        padding - left: 3.125rem
+    }
+}
+
+@media(min - width: 62.5em) {
+    .StoryBody figure {
+        box - sizing: content - box;
+        max - width: 52rem
+    }
+    .StoryBody h2,
+    .StoryBody p {
+        box - sizing: content - box;
+        max - width: 40rem
+    }
+}
+
+.StoryBody figure {
+    text - align: center
+}
+
+.StoryBody figcaption {
+    font - size: .75rem;
+    line - height: 1.66667;
+    color: #6f6f6f
+}
+
+.StoryTeaser {
+    display: flex
+}
+
+@media(any - hover) {
+    .MisatoToc__photos: hover.MisatoToc__photosIconWrapper {
+        color: #2d2927;
+        background - color: #fff
+    }
+    .MisatoToc__inPageLink: hover {
+        color: #ef9893
+    }
+    .MisatoToc__inPageLink: hover.MisatoToc__inPageLinkIconWrapper {
+        color: #2d2927;
+        background - color: #fff
+    }
+    .SiteHeader__menuButton: hover svg path: first - child {
+        fill: #fff;
+        transition: fill .35s cubic - bezier(.37, .16, .12, 1)
+    }
+    .SiteHeader__menuButton: hover svg path: last - child {
+        fill: #2d2927;
+        transition: fill .35s cubic - bezier(.37, .16, .12, 1)
+    }
+    .SiteHeader__linkMisato: hover.SiteHeader__linkMisatoIcon {
+        -webkit - animation: .5s steps(9, end) infinite alternate SiteHeader - misabo;
+        animation: .5s steps(9, end) infinite alternate SiteHeader - misabo
+    }
+    .SiteHeader__linkMisato: hover.SiteHeader__linkMisatoBg {
+        fill: #fff;
+        transition: fill .35s cubic - bezier(.37, .16, .12, 1)
+    }
+    .StoryTeaser: hover.StoryTeaser__image.thumb img {
+        transform: scale(1.1);
+        transition: transform .6s cubic - bezier(.22, .94, .44, 1)
+    }
+    .StoryTeaser: hover.StoryTeaser__body.title span {
+        background - color: #2d2927;
+        color: #fff
+    }
+    .StoryTeaser: hover.Badge {
+        background - color: #f15464
+    }
+    .StoryTeaser: hover.Badge__highlight {
+        color: #503278
+    }
+}
+
+.StoryTeaser__image {
+    margin - right: 10px
+}
+
+.StoryTeaser__image.thumb {
+    position: relative;
+    z - index: 1;
+    width: 96px;
+    height: 96px;
+    border - radius: 50 %;
+    overflow: hidden
+}
+
+.StoryTeaser__image.thumb img {
+    width: 100 %;
+    transition: transform .6s cubic - bezier(.37, .16, .12, 1)
+}
+
+.FullscreenMenu.StoryTeaser__image.thumb {
+    transition: transform .8s cubic - bezier(.215, .61, .355, 1) .25s, opacity .8s cubic - bezier(.215, .61, .355, 1) .25s;
+    transform - origin: 50 % 50 %
+}
+
+.FullscreenMenu[aria - hidden=true] .StoryTeaser__image.thumb {
+    transform: scale(.8);
+    opacity: 0;
+    transition: transform .3s cubic - bezier(.55, .055, .675, .19), opacity .3s cubic - bezier(.55, .055, .675, .19)
+}
+
+.StoryTeaser__body.Badge {
+    margin - bottom: 10px
+}
+
+.FullscreenMenu.StoryTeaser__body.Badge {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform .8s cubic - bezier(.22, .94, .44, 1) .25s, opacity .8s cubic - bezier(.25, .46, .45, .94) .25s, background - color .35s cubic - bezier(.37, .16, .12, 1)
+}
+
+.FullscreenMenu[aria - hidden=true] .StoryTeaser__body.Badge {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform .3s cubic - bezier(.55, .055, .675, .19), opacity .3s cubic - bezier(.55, .055, .675, .19), background - color .35s cubic - bezier(.37, .16, .12, 1)
+}
+
+.StoryTeaser__body.title {
+    font - size: 1rem
+}
+
+@media(min - width: 100em) {
+    .StoryTeaser__body.title {
+        font - size: 1.125rem
+    }
+}
+
+.FullscreenMenu.StoryTeaser__body.title {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform .85s cubic - bezier(.22, .94, .44, 1) .3s, opacity .85s cubic - bezier(.25, .46, .45, .94) .3s
+}
+
+.FullscreenMenu[aria - hidden=true] .StoryTeaser__body.title {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform .3s cubic - bezier(.55, .055, .675, .19), opacity .3s cubic - bezier(.55, .055, .675, .19)
+}
+
+.StoryTeaser__body.title span {
+    font - family: TazuganeGothicStdN - Bold, sans - serif;
+    background - color: #fff;
+    line - height: 1.3;
+    transition: background - color .35s cubic - bezier(.37, .16, .12, 1), color .35s cubic - bezier(.37, .16, .12, 1)
+}
+
+.SubPage {
+    background - color: #fef3e9
+}
+
+.SubPage>* {
+    transition: opacity .8s cubic- bezier(.37, .16, .12, 1)
+}
+
+.SubPage: not(.-loaded)>* {
+    opacity: 0
+}
+
+.SubPage__header {
+    display: flex;
+    margin - bottom: 3.125rem;
+    height: 23.4375rem;
+    background - repeat: repeat - x;
+    background - position: center center;
+    background - size: cover
+}
+
+.SubPage__header.- about,
+.SubPage__header.- misato,
+.SubPage__header.- photos {
+    align - items: center;
+    padding - top: 5rem;
+    padding - bottom: 6.25rem
+}
+
+.SubPage__header.- about {
+    background - image: url(/misatoto/assets / about / cover@default.png)
+}
+
+@media(min - width: 45em) {
+    .SubPage__header {
+        height: 33.625rem
+    }
+    .SubPage__header.- about,
+    .SubPage__header.- misato,
+    .SubPage__header.- photos {
+        padding - top: 11.875rem;
+        padding - bottom: 7.5rem
+    }
+    .SubPage__header.- about {
+        background - image: url(/misatoto/assets / about / cover@sm.png)
+    }
+}
+
+.SubPage__header.- misato {
+    background - image: url(/misatoto/assets / misato / cover@default.png)
+}
+
+@media(min - width: 45em) {
+    .SubPage__header.- misato {
+        background - image: url(/misatoto/assets / misato / cover@sm.png)
+    }
+}
+
+.SubPage__header.- photos {
+    background - image: url(/misatoto/assets / misato / photos / cover@default.png)
+}
+
+@media(min - width: 45em) {
+    .SubPage__header.- photos {
+        background - image: url(/misatoto/assets / misato / photos / cover@sm.png)
+    }
+}
+
+.SubPage__header.- story001 {
+    background - image: url(/misatoto/assets / stories / 001 / cover@default.png)
+}
+
+@media(min - width: 45em) {
+    .SubPage__header.- story001 {
+        background - image: url(/misatoto/assets / stories / 001 / cover@sm.png)
+    }
+}
+
+.SubPage__header.- story002 {
+    background - image: url(/misatoto/assets / stories / 002 / cover@default.png)
+}
+
+@media(min - width: 45em) {
+    .SubPage__header.- story002 {
+        background - image: url(/misatoto/assets / stories / 002 / cover@sm.png)
+    }
+}
+
+.SubPage__header.- story003 {
+    background - image: url(/misatoto/assets / stories / 003 / cover@default.png)
+}
+
+@media(min - width: 45em) {
+    .SubPage__header.- story003 {
+        background - image: url(/misatoto/assets / stories / 003 / cover@sm.png)
+    }
+}
+
+.SubPage__header.- story004 {
+    background - image: url(/misatoto/assets / stories / 004 / cover@default.png)
+}
+
+@media(min - width: 45em) {
+    .SubPage__header.- story004 {
+        background - image: url(/misatoto/assets / stories / 004 / cover@sm.png)
+    }
+}
+
+.SubPage__header.- story005 {
+    background - image: url(/misatoto/assets / stories / 005 / cover@default.png)
+}
+
+@media(min - width: 45em) {
+    .SubPage__header.- story005 {
+        background - image: url(/misatoto/assets / stories / 005 / cover@sm.png)
+    }
+}
+
+.SubPage__header.- story006 {
+    background - image: url(/misatoto/assets / stories / 006 / cover@default.png)
+}
+
+@media(min - width: 45em) {
+    .SubPage__header.- story006 {
+        background - image: url(/misatoto/assets / stories / 006 / cover@sm.png)
+    }
+}
+
+.SubPage__header.- story007 {
+    background - image: url(/misatoto/assets / stories / 007 / cover@default.png)
+}
+
+@media(min - width: 45em) {
+    .SubPage__header.- story007 {
+        background - image: url(/misatoto/assets / stories / 007 / cover@sm.png)
+    }
+}
+
+.SubPage__header.- story008 {
+    background - image: url(/misatoto/assets / stories / 008 / cover@default.png)
+}
+
+@media(min - width: 45em) {
+    .SubPage__header.- story008 {
+        background - image: url(/misatoto/assets / stories / 008 / cover@sm.png)
+    }
+}
+
+.SubPage__headerInner {
+    width: 100 %
+}
+
+.SubPage__body {
+    position: relative;
+    padding - top: 3rem;
+    padding - bottom: 6.125rem;
+    background - color: #fef3e9;
+    transition: color .8s cubic - bezier(.25, .46, .45, .94), background - color .8s cubic - bezier(.25, .46, .45, .94), transform .8s cubic - bezier(.37, .16, .12, 1)
+}
+
+.SubPage: not(.-loaded).SubPage__body {
+    transform: translateY(1.875rem)
+}
+
+.SubPage__body[data - theme=invert] {
+    color: #fff;
+    background - color: #2d2927
+}
+
+.SubPage__body[data - theme=green] {
+    color: #fff;
+    background - color: #32645a
+}
+
+.SubPage__body:: after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -6.25rem;
+    left: 0;
+    height: 9.375rem;
+    background - image: url(/misatoto/assets / cloud_loop_bottom.png);
+    background - repeat: repeat - x;
+    background - size: 90rem 9.375rem;
+    pointer - events: none
+}
+
+.SubPage.- loaded.SubPage__body:: after {
+    -webkit - animation: 200s linear infinite SubPage - cloud;
+    animation: 200s linear infinite SubPage - cloud
+}
+
+.SubPage__body>: not(.SubPage__cloudTop) {
+    transition: transform .8s cubic - bezier(.37, .16, .12, 1)
+}
+
+.SubPage: not(.-loaded).SubPage__body>: not(.SubPage__cloudTop) {
+    transform: translateY(1.875rem)
+}
+
+.SubPage__cloudTop {
+    position: absolute;
+    right: 0;
+    top: -11.625rem;
+    left: 0;
+    height: 11.625rem;
+    background - image: url(/misatoto/assets / cloud - top - layer - 3.png);
+    background - repeat: repeat - x;
+    background - position: -9.375rem center;
+    background - size: 90rem 11.625rem;
+    pointer - events: none
+}
+
+.SubPage.- loaded.SubPage__cloudTop {
+    -webkit - animation: 200s linear infinite SubPage - cloud;
+    animation: 200s linear infinite SubPage - cloud
+}
+
+.SubPage__cloudTop:: after,
+.SubPage__cloudTop:: before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background - repeat: repeat - x;
+    background - position: -9.375rem center;
+    background - size: 90rem 11.625rem
+}
+
+.SubPage__cloudTop:: before {
+    background - image: url(/misatoto/assets / cloud - top - layer - 1.png);
+    -webkit - animation: 100s linear infinite SubPage - cloud;
+    animation: 100s linear infinite SubPage - cloud
+}
+
+.SubPage.- loaded.SubPage__cloudTop:: before {
+    -webkit - animation: 100s linear infinite SubPage - cloud;
+    animation: 100s linear infinite SubPage - cloud
+}
+
+.SubPage__cloudTop:: after {
+    background - image: url(/misatoto/assets / cloud - top - layer - 2.png)
+}
+
+.SubPage.- loaded.SubPage__cloudTop:: after {
+    -webkit - animation: 400s linear infinite SubPage - cloud;
+    animation: 400s linear infinite SubPage - cloud
+}
+
+@-webkit - keyframes SubPage - cloud {
+    from {
+        background - position: -9.375rem center
+    }
+    to {
+        background - position: -99.375rem center
+    }
+}
+
+@keyframes SubPage - cloud {
+    from {
+        background - position: -9.375rem center
+    }
+    to {
+        background - position: -99.375rem center
+    }
+}
+
+.SubPageFooter {
+    padding - top: 7.75rem;
+    padding - bottom: 1.5rem;
+    text - align: right
+}
+
+.Text {
+    font - size: 1rem;
+    line - height: 1.75
+}
+
+.Text.- sm {
+    font - size: .875rem;
+    line - height: 1.71429
+}
+
+.Text.- xs {
+    font - size: .75rem;
+    line - height: 1.66667
+}
+
+.Text.- light {
+    color: #fff
+}
+
+.Text.- gray {
+    color: #6f6f6f
+}
+
+.Text a: not([class]) {
+    border - bottom: 1px solid
+}
+
+.VisuallyHidden {
+    position: absolute!important;
+    overflow: hidden!important;
+    width: 1px!important;
+    height: 1px!important;
+    padding: 0!important;
+    border: 0!important;
+    white - space: nowrap!important;
+    -webkit - clip - path: inset(50 %)!important;
+    clip - path: inset(50 %)!important;
+    clip: rect(0, 0, 0, 0)!important
+}
+
+.margin - top\: base {
+    margin - top: 1.5rem!important
+}
+
+.margin - top\: xxs {
+    margin - top: .5rem!important
+}
+
+.margin - top\: xs {
+    margin - top: .75rem!important
+}
+
+.margin - top\: sm {
+    margin - top: 1rem!important
+}
+
+.margin - top\: lg {
+    margin - top: 2rem!important
+}
+
+.margin - top\: xl {
+    margin - top: 3rem!important
+}
+
+.margin - top\: xxl {
+    margin - top: 5rem!important
+}
+
+.text - align\: center {
+    text - align: center!important
+}
+
+.text - align\: right {
+    text - align: right!important
+}
