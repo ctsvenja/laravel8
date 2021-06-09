@@ -36,6 +36,8 @@ Route::prefix('shopping_cart')->group(function() {
     Route::post('/add','ShoppingCartController@add');
     // 改個名
     Route::get('/list','ShoppingCartController@list');
+    Route::post('/delete','ShoppingCartController@delete');
+
 
 });
 

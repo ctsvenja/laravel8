@@ -37,4 +37,13 @@ class ShoppingCartController extends Controller
         // dd($cartCollection);
         return view('front.shoppingcart.cart01',compact('cartCollection'));
     }
+    public function delete(Request $request)
+    {
+        if($request->productId){
+            \Cart::remove($request->productId);
+            return 'success';
+        }else{
+            return 'fail';
+        }
+    }
 }

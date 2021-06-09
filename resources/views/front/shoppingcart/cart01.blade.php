@@ -30,6 +30,7 @@
     text-align: center;
     line-height: 40px;
 }</style>    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.0.6/sweetalert2.css" integrity="sha512-RS1E7VTq+q/sM0LogtWnvuXvfhs3JwPVJr4P9GAV3bGoIaaVhJNhSC8BVbPac1aXrzD3njrBpq7PbENlzmT8RQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection
 
 @section('main')
@@ -87,6 +88,7 @@
                 {{-- @php
                     $img = $product->attributes->img;
                 @endphp --}}
+                <button type="button" class="del-btn" data-id="{{$product->id}}"> X </button>
               <img class="rounded-circle" style="width: 60px; height: 60px;" src="{{$product->attributes->img}}" alt=""/>
               <div class="food-description ml-2 ">
                 <p class="m-0">{{$product->name}}</p>
@@ -96,7 +98,7 @@
             <div class="col-12 col-md-6 d-flex align-items-center justify-content-end ">
                 <div class="quantity ml-1">
                     <button type="button" class="minus border-0 rounded">-</button>
-                    <input type="" style="width: 30px;" value="{{$product->quantity}}">
+                    <input class="qty" type="" style="width: 30px;" value="{{$product->quantity}}">
                     <button type="button" class="plus border-0 rounded">+</button>
                 </div>
                 <div class="price ml-1" data-price="{{$product->price}}">{{number_format($product->quantity*$product->price)}}</div>    
@@ -116,10 +118,10 @@
               <div class="row text-muted">總計：</div>
             </div>
             <div class="col-3 d-flex flex-column align-items-end">
-              <div class="row ">3</div>
-              <div class="row">$24.90</div>
-              <div class="row ">$24.90</div>
-              <div class="row ">$24.90</div>
+              <div class="row" id="total-qty"></div>
+              <div class="row" id="sub-price"></div>
+              <div class="row" id="shipping-fee"></div>
+              <div class="row" id="total-price"></div>
             </div>
           </div>
         </div>
@@ -130,14 +132,50 @@
         <a href="./bootstrap-cart02.html"><button class="btn btn-primary ml-auto btn-lg">下一步</button></a>
       </div>
     </div>
-  </div>
+</div>
 @endsection
 
 @section('js')
 <script>
+    window.addEventListener('load',shoppingCartCalc());
     var minusBtns = document.querySelectorAll('.minus');
     var plusBtns = document.querySelectorAll('.plus');
+    var qtyInputs = document.querySelectorAll('.qty');
+    var delBtns = document.querySelectorAll('.del-btn');
+    function calcProductPrice(Element) {
+        // 觸發事件元素的父層
+        var controlArea = Element.parentElement;
+        var input = controlArea.querySelector('.qty');
+        var price = controlArea.nextElementSibling;
+        var newPrice = (price.getAttribute('data-price') * input.value).toLocaleString();
+        price.innerText = newPrice;
+        shoppingCartCalc();
+    }
 
+    function shoppingCartCalc() {
+        var totalQty = 0;
+        var subPrice = 0;
+        var shippingFee = 60;
+        var totalPrice = 0;
+
+        var qtyInputs = document.querySelectorAll('.qty');
+        qtyInputs.forEach(function (qtyInput) {
+            totalQty += Number(qtyInput.value);
+
+            var price = qtyInput.parentElement.nextElementSibling.getAttribute('data-price');
+            subPrice += price*( qtyInput.value );
+        });
+        document.querySelector('#total-qty').innerText = totalQty.toLocaleString();
+        document.querySelector('#sub-price').innerText = subPrice.toLocaleString();
+        if(subPrice >= 1000){
+            shippingFee = 0;
+        }
+        document.querySelector('#shipping-fee').innerText = shippingFee.toLocaleString();
+
+        totalPrice = subPrice + shippingFee;
+        document.querySelector('#total-price').innerText = totalPrice.toLocaleString();
+    }
+    
     plusBtns.forEach(function (plusBtn){
         plusBtn.addEventListener('click', function () {
         // this.previousElementSibling 
@@ -146,9 +184,7 @@
         input.value = Number(input.value)+ 1;
         
         // 取得price元素
-        var price = this.parentElement.nextElementSibling;
-        var newPrice = (price.getAttribute('data-price') * input.value).toLocaleString();
-        price.innerText = newPrice;
+        calcProductPrice(this);
         });
     });
 
@@ -158,18 +194,67 @@
         // 取得當前元素後面的元素，在此處也就是取得input
         // console.log(this.nextElementSibling);
         var input = this.nextElementSibling;
-        if (input.value !=='1'){
-        input.value = input.value *1 - 1;
+        var inputValue = Number(input.value);
+        if (inputValue > 1 ){
+        input.value = input.value * 1 - 1;
         }   
         // console.log(input.value);
         
         // 取得price元素
-        var price = this.parentElement.nextElementSibling;
-        var newPrice = (price.getAttribute('data-price') * input.value).toLocaleString();
-        price.innerText = newPrice;
-        
-                    
+        calcProductPrice(this);
         });
     });
+    qtyInputs.forEach(function name(qtyInput) {
+        qtyInput.addEventListener('change',function () {
+            var input = this;
+            if(input.value < 1 ){
+                input.value = 1;
+            }
+            calcProductPrice(this);
+        })
+    })
+
+    delBtns.forEach(function (delBtn) {
+        delBtn.addEventListener('click',function () {
+            var formData = new FormData();
+            formData.append('_token','{{ csrf_token() }}');
+            formData.append('productId',this.getAttribute('data-id'));
+
+            delBtnElement = this;
+            fetch('/shopping_cart/delete',{
+                'method':'POST',
+                'body':formData
+            }).then(function (response){
+                return response.text();
+            }).then(function (data) {
+                if(data == 'success'){
+                    var productArea = delBtnElement.parentElement.parentElement;
+                    productArea.nextElementSibling.remove();
+                    productArea.remove();
+                    shoppingCartCalc();
+                    Swal.fire({
+                        icon: 'success',
+                        title: '移除成功',
+                        showConfirmButton: false,
+                        time:700
+                    })
+                }else{
+                    Swal.fire({
+                        icon: 'error',
+                        title: '移除失敗',
+                        showConfirmButton: false,
+                        time:700
+                    })
+                }
+                
+            })
+
+            
+        })
+
+
+    });
+
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.0.6/sweetalert2.min.js" integrity="sha512-WrWL0HFmRt8gy0zGIFB5pZg+lI/Bdp4iXqXCJEItYqeuICmOlPOyhn2hG3X+/o19B7HIlwKeKRXTjkuHzkhlqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 @endsection
