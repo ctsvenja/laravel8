@@ -6,6 +6,7 @@ use App\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class NewsController extends Controller
 {
@@ -24,16 +25,13 @@ class NewsController extends Controller
         // News::create($request->all());
         // return redirect('/admin/news');
 
-        $requsetData = $request->all();
+        $requestData = $request->all();
 
         if ($request->hasFile('img')) {
             $file = $request->file('img');
 
             $path = Storage::disk('myfile')->putFile('news', $file);
-            $requsetData['img'] = '/upload/' . $path;
-
-            // $path = $this->fileUpload($file, 'news');
-            // $requsetData['img'] = $path;
+            $requestData['img'] = '/upload/' . $path;
         }
 
         $parser = xml_parser_create();
@@ -49,15 +47,24 @@ class NewsController extends Controller
                 $first_src = $tag['attributes']['SRC'];
                 // dd($first_src);
 
-                // base64 to img 並儲存，取得path
+                // 判斷有沒有base64
+                if (strpos($first_src, ';base64,') !== false) {
+                    // **base64 to img 並儲存，取得path**
+                    $path = $this->base64fileUpload($first_src, 'summernote');
+                    // dd($path);
 
-                // $request->content 中目前的$first_src 取代成path
+                    // **$request->content 中目前的$first_src 取代成path**
+                    $requestData['content'] = $this->replace_first_str($first_src, $path, $requestData['content'], 1);
+                    // dd($requestData['content']);
+                }
             }
         }
-
-
-        News::create($requsetData);
+        News::create($requestData);
         return redirect('/admin/news');
+    }
+    private function replace_first_str($search_str, $replacement_str, $src_str)
+    {
+        return (false !== ($pos = strpos($src_str, $search_str))) ? substr_replace($src_str, $replacement_str, $pos, strlen($search_str)) : $src_str;
     }
     public function edit($id)
     {
@@ -125,7 +132,42 @@ class NewsController extends Controller
         return redirect('/admin/news');
     }
 
+    private function base64fileUpload($base64, $dir)
+    {
+        //防呆：資料夾不存在時將會自動建立資料夾，避免錯誤
+        if (!is_dir('upload/')) {
+            mkdir('upload/');
+        }
+        //防呆：資料夾不存在時將會自動建立資料夾，避免錯誤
+        if (!is_dir('upload/' . $dir)) {
+            mkdir('upload/' . $dir);
+        }
+        // 將$base64去蕪存菁 剩下逗號之後的編碼
+        $base64_code = preg_replace('/^data:image\/\w+;base64,/', '', $base64);
+        // 取得檔案的副檔名 extension
+        $type = explode(';', $base64)[0];
+        $extension = explode('/', $type)[1]; // png or jpg etc
 
+
+        // 檔案名稱會被重新命名
+        // 產生檔名
+        $filename = strval(time() . md5(rand(100, 200))) . '.' . $extension;
+        // 產生路徑
+        $path = '/upload/' . $dir . '/' . $filename;
+
+        // 使用intervetion image套件 儲存到指定路徑
+        $img = Image::make($base64_code);
+        // resize 防止圖片尺寸過大
+        $img->resize(1920, null, function ($constraint) {
+            $constraint->aspectRatio();
+            $constraint->upsize();
+        });
+        // 儲存到指定路徑 80為壓縮品質
+        $img->save(public_path() . $path, 80);
+
+        //回傳 資料庫儲存用的路徑格式
+        return $path;
+    }
 
     private function fileUpload($file, $dir)
     {
