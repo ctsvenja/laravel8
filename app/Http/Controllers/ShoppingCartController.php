@@ -21,17 +21,20 @@ class ShoppingCartController extends Controller
                 'name' => $product->name, // 商品名稱
                 'price' => $product->price, //商品價格
                 'quantity' => 1, //商品數量
-                'attributes' => array() // 自定義參數
+                'attributes' => array(
+                    'img'=>$product->img
+                ) // 自定義參數
             ));
             return 'success';
         }else{
             return 'fail';
         }
     }
-    public function content()
+    public function list()
     {
         // 查看購物車現有內容
         $cartCollection = \Cart::getContent();
-        dd($cartCollection);
+        // dd($cartCollection);
+        return view('front.shoppingcart.cart01',compact('cartCollection'));
     }
 }

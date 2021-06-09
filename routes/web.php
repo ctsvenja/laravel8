@@ -34,7 +34,9 @@ Route::prefix('products')->group(function ()
 
 Route::prefix('shopping_cart')->group(function() {
     Route::post('/add','ShoppingCartController@add');
-    Route::get('/content','ShoppingCartController@content');
+    // 改個名
+    Route::get('/list','ShoppingCartController@list');
+
 });
 
 
