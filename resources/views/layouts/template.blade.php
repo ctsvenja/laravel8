@@ -85,7 +85,7 @@
               <a class="nav-link text-body ml-3" href="#">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-body ml-3" href="./bootstrap-cart01.html"><i class="fas fa-shopping-cart"
+              <a class="nav-link text-body ml-3" href="/shopping_cart/list"><i class="fas fa-shopping-cart"
                   style="font-size: 25px;"></i></a>
             </li>
             <li class="nav-item dropdown">
@@ -180,5 +180,15 @@
     integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous">
   </script>
   @yield('js')
+  @if (Session::get('text'))
+    <script>
+      Swal.fire({
+        icon: '{{Session::get("icon")}}',
+        title: '{{Session::get("title")}}',
+        text: '{{Session::get("text")}}'
+      })
+    </script>
+  @endif
+
 </body>
 </html>

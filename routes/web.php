@@ -34,10 +34,12 @@ Route::prefix('products')->group(function ()
 
 Route::prefix('shopping_cart')->group(function() {
     Route::post('/add','ShoppingCartController@add');
-    // 改個名
+    Route::post('/update','ShoppingCartController@update');
+
     Route::get('/list','ShoppingCartController@list');
     Route::post('/delete','ShoppingCartController@delete');
-
+    Route::get('/payment','ShoppingCartController@payment');
+    Route::post('/payment/check','ShoppingCartController@paymentCheck');   
 
 });
 

@@ -98,7 +98,7 @@
             <div class="col-12 col-md-6 d-flex align-items-center justify-content-end ">
                 <div class="quantity ml-1">
                     <button type="button" class="minus border-0 rounded">-</button>
-                    <input class="qty" type="" style="width: 30px;" value="{{$product->quantity}}">
+                    <input class="qty" type="" style="width: 30px;" data-id="{{$product->id}}" value="{{$product->quantity}}" >
                     <button type="button" class="plus border-0 rounded">+</button>
                 </div>
                 <div class="price ml-1" data-price="{{$product->price}}">{{number_format($product->quantity*$product->price)}}</div>    
@@ -128,8 +128,8 @@
       </div>
       <hr />
       <div class="action-button d-flex justify-content-between align-items-center">
-        <a href="./bootstrap-index.html" class="previous text-body"><i class="fas fa-arrow-left"></i>返回購物</a>
-        <a href="./bootstrap-cart02.html"><button class="btn btn-primary ml-auto btn-lg">下一步</button></a>
+        <a href="/products" class="previous text-body"><i class="fas fa-arrow-left"></i>返回購物</a>
+        <a href="/shopping_cart/payment" class="btn btn-primary ml-auto btn-lg">下一步</a>
       </div>
     </div>
 </div>
@@ -175,16 +175,34 @@
         totalPrice = subPrice + shippingFee;
         document.querySelector('#total-price').innerText = totalPrice.toLocaleString();
     }
+
+    function shoppingCartUpdate(element,input,qty) {
+        var productId = input.getAttribute('data-id');
+        // console.log(productId);     
+        var formData = new FormData();
+        formData.append('_token', '{{ csrf_token() }}');
+        formData.append('productId',productId);
+        formData.append('qty',qty);
+
+        fetch('/shopping_cart/update',{
+            'method':'POST',
+            'body':formData
+        }).then(function (response) {
+            return response.text();
+        }).then(function (data) {
+            input.value = data;
+            calcProductPrice(element);
+            shoppingCartCalc();            
+        }) 
+    }
     
     plusBtns.forEach(function (plusBtn){
         plusBtn.addEventListener('click', function () {
         // this.previousElementSibling 
         // 當前元素前面的元素，在此處也就是取得input
-        var input = this.previousElementSibling;
-        input.value = Number(input.value)+ 1;
-        
-        // 取得price元素
-        calcProductPrice(this);
+        var input = this.previousElementSibling;  
+        var qty = Number(input.value) + 1 ;        
+        shoppingCartUpdate(this,input,qty);
         });
     });
 
@@ -196,21 +214,27 @@
         var input = this.nextElementSibling;
         var inputValue = Number(input.value);
         if (inputValue > 1 ){
-        input.value = input.value * 1 - 1;
-        }   
-        // console.log(input.value);
-        
-        // 取得price元素
-        calcProductPrice(this);
-        });
+        var qty = Number(input.value) - 1 ;
+        }
+        shoppingCartUpdate(this,input,qty);
+        });     
     });
+
     qtyInputs.forEach(function name(qtyInput) {
         qtyInput.addEventListener('change',function () {
             var input = this;
-            if(input.value < 1 ){
-                input.value = 1;
+            // if(Number(input.value) < 1 ){
+            //     qty = 1;
+            // }else{
+            //     qty = Number(input.value);
+            // }
+            
+            var qty = Number(input.value);
+            if(qty < 1 ){
+                qty = 1;
             }
-            calcProductPrice(this);
+
+            shoppingCartUpdate(this,input,qty);           
         })
     })
 

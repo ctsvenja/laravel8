@@ -52,4 +52,10 @@ class ToolBoxController extends Controller
         //回傳 資料庫儲存用的路徑格式
         return '/upload/' . $dir . '/' . $filename;
     }
+
+    static function swal($icon,$title,$text)
+    {
+        return ['icon'=>$icon,'title'=>$title,'text'=>$text];
+    }
+
 }
